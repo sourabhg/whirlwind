@@ -128,11 +128,15 @@ class Filters():
     
     @staticmethod
     def add_commas(val,as_data_type='int',the_locale=locale.LC_ALL):
-        locale.setlocale(the_locale, "")
+        #locale.setlocale(the_locale, "")
+        print val
         if as_data_type == 'int':
-            return locale.format('%d', int(val), True)
+        #    return locale.format('%d', int(val), True)
+    
+             return "{:,}".format(val)
         elif as_data_type == 'float':
-            return locale.format('%f', float(val), True)
+             return "{:,}".format(val)
+       #     return locale.format('%f', float(val), True)
         else:
             return val
         
